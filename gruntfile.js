@@ -1,5 +1,4 @@
 module.exports = function(grunt) {
-
   require('load-grunt-tasks')(grunt);
 
   // Project configuration.
@@ -35,7 +34,7 @@ module.exports = function(grunt) {
       },
       segments: {
         src: '<%= preprocess.segments.dest %>',
-        dest: '<%= preprocess.segments.dest %>'
+        dest: 'dist/time-segments.js'
       }
     },
 
@@ -44,8 +43,8 @@ module.exports = function(grunt) {
         banner: '<%= meta.banner %>'
       },
       segments: {
-        src: '<%= preprocess.segments.dest %>',
-        dest: 'dist/backbone.segments.min.js',
+        src: '<%= concat.segments.dest %>',
+        dest: 'dist/time-segments.min.js',
         options: {
           sourceMap: true
         }

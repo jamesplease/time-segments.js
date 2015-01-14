@@ -32,8 +32,9 @@ are also supported, as in `w` for `weeks.`
 
 ##### Segments
 
-Segments are groups of events. They are an Object. The key is the
-starting unix timestamp of the segment. The value is an array of events.
+Segments are an Object representing the groups of events. Each key of the Object
+is the starting unix timestamp of the segment. The value of each key is the array
+of events that occur during that segment.
 
 ### API
 

@@ -1,7 +1,3 @@
-//
-// Time Segments
-//
-
 var TimeSegments = {
 
   // Segment an array of events by scale
