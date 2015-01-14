@@ -31,12 +31,12 @@ are also supported, as in `w` for `weeks.`
 A Segment is a group that is a single unit of Scale. Segments
 contain Events.
 
-`events` - An array of events that take place during the aggregate  
+`events` - An array of events that take place during the segment  
 `start` - A start time as a unix timestamp  
 `end` - An end time as a unix timestamp  
 
 This library exposes a single method. It takes in an array of Events
-and returns an array of Aggregates.
+and returns an array of Segments.
 
 ### API
 

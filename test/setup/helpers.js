@@ -14,7 +14,7 @@ function setupTestHelpers() {
 
 var node = typeof exports !== 'undefined';
 
-// Humanize an array of Events or Aggregates
+// Humanize an array of Events or Segments
 var humanReadableFormat = 'YYYY-MM-DD';
 function humanize(segments) {
   var ret = {}, key;
