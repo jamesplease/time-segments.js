@@ -20,8 +20,8 @@ global.expect = chai.expect;
 global.sinon = sinon;
 
 global.fixtures = {};
-global.fixtures.one = require('../fixtures/one');
-global.fixtures.two = require('../fixtures/two');
+global.fixtures.oneEvent = require('../fixtures/one-event');
+global.fixtures.twoEvents = require('../fixtures/two-events');
 
 // Load the library
 global.TimeSegments = require('../../tmp/time-segments');

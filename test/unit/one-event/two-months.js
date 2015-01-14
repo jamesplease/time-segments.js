@@ -1,6 +1,6 @@
-describe('One event; one day', function() {
+describe('One event; two months', function() {
   beforeEach(function() {
-    this.events = fixtures.one.oneDay;
+    this.events = fixtures.oneEvent.twoMonths;
   });
 
   describe('and the scale is years', function() {
@@ -26,16 +26,22 @@ describe('One event; one day', function() {
       this.segments = humanize(TimeSegments.segment(this.events, 'months'));
     });
 
-    it('should have a single key', function() {
-      expect(this.segments).to.have.keys(['2015-03-01']);
+    it('should have two keys', function() {
+      expect(this.segments).to.have.keys([
+        '2015-03-01', '2015-04-01'
+      ]);
     });
 
-    it('should have a single event in that key', function() {
-      expect(this.segments['2015-03-01']).to.have.length(1);
+    it('should have a single event in each key', function() {
+      _.each(this.segments, function(s) {
+        expect(s).to.have.length(1);
+      });
     });
 
-    it('should have the event passed in within that key', function() {
-      expect(this.segments['2015-03-01'][0]).to.deep.equal(this.events[0]);
+    it('should have the event passed in within each key', function() {
+      _.each(this.segments, function(s) {
+        expect(s).to.have.length(1);
+      });
     });
   });
 
@@ -45,15 +51,15 @@ describe('One event; one day', function() {
     });
 
     it('should have a single key', function() {
-      expect(this.segments).to.have.keys(['2015-03-22']);
+      expect(this.segments).to.have.keys(['2015-03-29']);
     });
 
     it('should have a single event in that key', function() {
-      expect(this.segments['2015-03-22']).to.have.length(1);
+      expect(this.segments['2015-03-29']).to.have.length(1);
     });
 
     it('should have the event passed in within that key', function() {
-      expect(this.segments['2015-03-22'][0]).to.deep.equal(this.events[0]);
+      expect(this.segments['2015-03-29'][0]).to.deep.equal(this.events[0]);
     });
   });
 
@@ -62,16 +68,23 @@ describe('One event; one day', function() {
       this.segments = humanize(TimeSegments.segment(this.events, 'days'));
     });
 
-    it('should have a single key', function() {
-      expect(this.segments).to.have.keys(['2015-03-28']);
+    it('should have six keys', function() {
+      expect(this.segments).to.have.keys([
+        '2015-03-29', '2015-03-30', '2015-03-31',
+        '2015-04-01', '2015-04-02', '2015-04-03'
+      ]);
     });
 
-    it('should have a single event in that key', function() {
-      expect(this.segments['2015-03-28']).to.have.length(1);
+    it('should have a single event within each key', function() {
+      _.each(this.segments, function(s) {
+        expect(s).to.have.length(1);
+      });
     });
 
-    it('should have the event passed in within that key', function() {
-      expect(this.segments['2015-03-28'][0]).to.deep.equal(this.events[0]);
+    it('should have the event passed in within each key', function() {
+      _.each(this.segments, function(s) {
+        expect(s[0]).to.deep.equal(this.events[0]);
+      }, this);
     });
   });
 });

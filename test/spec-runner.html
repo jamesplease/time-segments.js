@@ -23,14 +23,20 @@
   <script src='setup/helpers.js'></script>
 
   <!-- Load fixtures -->
-  <script src='fixtures/one.js'></script>
+  <script src='fixtures/one-event.js'></script>
+  <script src='fixtures/two-events.js'></script>
+
+  <!-- Load the helper tests -->
+  <script src='unit/helpers/humanize.js'></script>
 
   <!-- Load the test specs -->
-  <script src='unit/one/one-day.js'></script>
-  <script src='unit/one/three-days.js'></script>
-  <script src='unit/one/two-weeks.js'></script>
-  <script src='unit/one/two-months.js'></script>
-  <script src='unit/one/two-years.js'></script>
+  <script src='unit/one-event/one-day.js'></script>
+  <script src='unit/one-event/three-days.js'></script>
+  <script src='unit/one-event/two-weeks.js'></script>
+  <script src='unit/one-event/two-months.js'></script>
+  <script src='unit/one-event/two-years.js'></script>
+  <script src='unit/two-events/concurrent.js'></script>
+  <script src='unit/two-events/nonconcurrent.js'></script>
 </head>
 <body>
   <!-- Required for browser reporter -->

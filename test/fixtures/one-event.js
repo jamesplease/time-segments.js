@@ -3,7 +3,7 @@
 //
 
 var fixtures = fixtures || {};
-fixtures.one = {};
+fixtures.oneEvent = {};
 
 var module = module || {};
 if (module) { module.exports = fixtures.one; }
@@ -16,7 +16,7 @@ if (module) { module.exports = fixtures.one; }
 // Days, weeks, months, years: 1
 //
 
-fixtures.one.oneDay = [
+fixtures.oneEvent.oneDay = [
   {
     "id": 1,
     "start": "2015-03-28",
@@ -33,7 +33,7 @@ fixtures.one.oneDay = [
 // Weeks, months, years: 1
 //
 
-fixtures.one.threeDays = [
+fixtures.oneEvent.threeDays = [
   {
     "id": 1,
     "start": "2015-04-01",
@@ -50,7 +50,7 @@ fixtures.one.threeDays = [
 // Weeks, months, years: 1
 //
 
-fixtures.one.twoWeeks = [
+fixtures.oneEvent.twoWeeks = [
   {
     "id": 1,
     "start": "2015-04-01",
@@ -69,7 +69,7 @@ fixtures.one.twoWeeks = [
 // Years: 1
 //
 
-fixtures.one.twoMonths = [
+fixtures.oneEvent.twoMonths = [
   {
     "id": 1,
     "start": "2015-03-29",
@@ -89,7 +89,7 @@ fixtures.one.twoMonths = [
 //
 
 
-fixtures.one.twoYears = [
+fixtures.oneEvent.twoYears = [
   {
     "id": 1,
     "start": "2014-12-30",
