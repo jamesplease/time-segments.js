@@ -6,7 +6,7 @@ var fixtures = fixtures || {};
 fixtures.oneEvent = {};
 
 var module = module || {};
-if (module) { module.exports = fixtures.one; }
+if (module) { module.exports = fixtures.oneEvent; }
 
 //       Mar 28, 2015
 //  1    [----------]

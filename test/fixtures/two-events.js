@@ -6,7 +6,7 @@ var fixtures = fixtures || {};
 fixtures.twoEvents = {};
 
 var module = module || {};
-if (module.exports) { module.exports = fixtures.two; }
+if (module.exports) { module.exports = fixtures.twoEvents; }
 
 //       Mar 10   ...   Mar 20
 //  1    [-------------------]
