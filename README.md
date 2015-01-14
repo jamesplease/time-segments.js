@@ -41,7 +41,7 @@ of events that occur during that segment.
 This library exposes a single method. It takes in an array of Events
 and returns an array of Segments.
 
-##### `group( events, scale [, options] )`
+##### `segment( events, scale [, options] )`
 
 Takes in an array of `events` and a `scale`, returns a `segments` Object.
 Optionally pass `options` to configure the algorithm.
