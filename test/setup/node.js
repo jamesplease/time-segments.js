@@ -19,5 +19,9 @@ chai.use(sinonChai);
 global.expect = chai.expect;
 global.sinon = sinon;
 
+global.fixtures = {};
+global.fixtures.one = require('../fixtures/one');
+global.fixtures.two = require('../fixtures/two');
+
 // Load the library
-require('../../src/time-segments');
+global.TimeSegments = require('../../tmp/time-segments');

@@ -26,6 +26,7 @@ function humanize(segments) {
 }
 
 if (node) {
+  global.humanize = humanize;
   setupTestHelpers();
 }
 

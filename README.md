@@ -13,11 +13,13 @@ then all of the events for a given week will need to be grouped together.
 
 ##### Event
 
-An Event is an object with three properties:
+An Event is an object with at least properties:
 
-`id` - A unique identifier  
 `start` - A start time as a unix timestamp  
 `end` - An end time as a unix timestamp
+
+It is almost always the case that events will have a unique ID, and
+possibly other data, associated with them. 
 
 ##### Scale
 

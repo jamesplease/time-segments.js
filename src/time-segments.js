@@ -3,26 +3,35 @@
 //
 
 var TimeSegments = {
+
+  // Segment an array of events by scale
   segment: function(events, scale, options) {
     scale = scale || 'weeks';
-    events = _.chain(events).clone().sortBy('start').value();
-    var timeline = {};
-    _.each(events, function(e) {
-      TimeSegments._insertIntoTimeline(timeline, e, scale);
+    var segments = {};
+
+    // Clone our events so that we're not modifying the original
+    // objects. Loop through them, inserting the events into the
+    // corresponding segments
+    _.each(_.clone(events), function(e) {
+      TimeSegments._insertIntoSegments(segments, e, scale);
     });
-    return timeline;
+    return segments;
   },
 
-  _insertIntoTimeline: function(timeline, e, scale) {
+  _insertIntoSegments: function(segments, e, scale) {
+
+    // Calculate the duration of the event; this determines
+    // how many segments it will be in
     var startMoment = moment.utc(e.start).startOf(scale);
-    var endMoment = moment.utc(e.end).endOf(scale);
-    var exclusiveEnd = moment.utc(endMoment).add(1, 'milliseconds');
-    var duration = exclusiveEnd.diff(startMoment, scale);
+    var endMoment = moment.utc(e.end).endOf(scale).add(1, 'milliseconds');
+    var duration = endMoment.diff(startMoment, scale);
+
+    // For each duration, add the event to the corresponding segment
     var segmentStart;
     for(var i = 0; i < duration; i++) {
       segmentStart = moment.utc(startMoment).add(i, scale).unix();
-      if (!timeline[segmentStart]) { timeline[segmentStart] = []; }
-      timeline[segmentStart].push(_.clone(e));
+      if (!segments[segmentStart]) { segments[segmentStart] = []; }
+      segments[segmentStart].push(_.clone(e));
     }
   }
 };

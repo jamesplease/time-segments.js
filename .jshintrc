@@ -16,7 +16,7 @@
   "plusplus"      : false,
   "quotmark"      : "single",
   "undef"         : true,
-  "unused"         : true,
+  "unused"        : "var",
   "strict"        : false,
   "trailing"      : true,
   "maxparams"     : 4,

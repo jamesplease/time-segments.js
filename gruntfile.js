@@ -7,13 +7,13 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     meta: {
       version: '<%= pkg.version %>',
-      banner: '// Backbone.Intercept v<%= meta.version %>\n'
+      banner: '// TimeSegments v<%= meta.version %>\n'
     },
 
     preprocess: {
-      intercept: {
+      segments: {
         src: 'src/wrapper.js',
-        dest: 'dist/backbone.intercept.js'
+        dest: 'tmp/time-segments.js'
       }
     },
 
@@ -23,9 +23,9 @@ module.exports = function(grunt) {
           version: '<%= meta.version %>'
         }
       },
-      intercept: {
-        src: '<%= preprocess.intercept.dest %>',
-        dest: '<%= preprocess.intercept.dest %>'
+      segments: {
+        src: '<%= preprocess.segments.dest %>',
+        dest: '<%= preprocess.segments.dest %>'
       }
     },
 
@@ -33,9 +33,9 @@ module.exports = function(grunt) {
       options: {
         banner: '<%= meta.banner %>'
       },
-      intercept: {
-        src: '<%= preprocess.intercept.dest %>',
-        dest: '<%= preprocess.intercept.dest %>'
+      segments: {
+        src: '<%= preprocess.segments.dest %>',
+        dest: '<%= preprocess.segments.dest %>'
       }
     },
 
@@ -43,9 +43,9 @@ module.exports = function(grunt) {
       options: {
         banner: '<%= meta.banner %>'
       },
-      intercept: {
-        src: '<%= preprocess.intercept.dest %>',
-        dest: 'dist/backbone.intercept.min.js',
+      segments: {
+        src: '<%= preprocess.segments.dest %>',
+        dest: 'dist/backbone.segments.min.js',
         options: {
           sourceMap: true
         }
@@ -53,11 +53,11 @@ module.exports = function(grunt) {
     },
 
     jshint: {
-      intercept: {
+      segments: {
         options: {
           jshintrc: '.jshintrc'
         },
-        src: ['src/backbone.intercept.js']
+        src: ['src/time-segments.js']
       },
       tests: {
         options: {
@@ -84,13 +84,14 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('test', 'Test the library', [
+    'preprocess',
     'jshint',
     'mochaTest'
   ]);
 
   grunt.registerTask('build', 'Build the library', [
     'test',
-    'preprocess:intercept',
+    'preprocess:segments',
     'template',
     'concat',
     'uglify'

@@ -5,6 +5,9 @@
 var fixtures = fixtures || {};
 fixtures.one = {};
 
+var module = module || {};
+if (module) { module.exports = fixtures.one; }
+
 //       Mar 28, 2015
 //  1    [----------]
 //
