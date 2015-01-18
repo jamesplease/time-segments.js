@@ -1,7 +1,7 @@
 var TimeSegments = {
 
   // Segment an array of events by scale
-  segment: function(events, scale, options) {
+  segment(events, scale, options) {
     scale = scale || 'weeks';
     options = options || {};
     _.defaults(options, {
@@ -14,7 +14,7 @@ var TimeSegments = {
     // Clone our events so that we're not modifying the original
     // objects. Loop through them, inserting the events into the
     // corresponding segments
-    _.each(_.clone(events), function(e) {
+    _.each(_.clone(events), e => {
       
       // Calculate the duration of the event; this determines
       // how many segments it will be in
@@ -32,3 +32,5 @@ var TimeSegments = {
     return segments;
   }
 };
+
+export default TimeSegments;

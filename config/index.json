@@ -1,0 +1,6 @@
+{
+  "destinationFolder": "dist",
+  "exportFileName": "time-segments",
+  "entryFileName": "time-segments",
+  "exportVarName": "TimeSegments"
+}
