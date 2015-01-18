@@ -1,30 +1,21 @@
 {
-  "name": "es6-library-boilerplate",
-  "version": "0.0.3",
-  "description": "Author libraries in ES6 for Node and the browser.",
-  "main": "dist/library-dist.js",
+  "name": "time-segments.js",
+  "version": "0.0.1",
+  "description": "Group event data into segments of time.",
+  "main": "dist/time-segments",
   "scripts": {
     "test": "gulp"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jmeas/es6-library-boilerplate.git"
+    "url": "https://github.com/jmeas/time-segments.js.git"
   },
-  "keywords": [
-    "boilerplate",
-    "es6",
-    "node",
-    "starter",
-    "kit",
-    "transpile",
-    "6to5"
-  ],
   "author": "Jmeas",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jmeas/es6-library-boilerplate/issues"
+    "url": "https://github.com/jmeas/time-segments.js/issues"
   },
-  "homepage": "https://github.com/jmeas/es6-library-boilerplate",
+  "homepage": "https://github.com/jmeas/time-segments.js",
   "devDependencies": {
     "6to5": "^2.12.6",
     "browserify": "^8.1.1",
@@ -51,6 +42,6 @@
   },
   "dependencies": {
     "moment": "^2.9.0",
-    "underscore": "^1.7.0"
+    "underscore": "1.4.4 - 1.7.0"
   }
 }

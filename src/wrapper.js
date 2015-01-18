@@ -8,7 +8,7 @@
   } else {
     root.<%= exportVarName %> = factory(root._, root.moment);
   }
-})(this, function(_) {
+})(this, function(_, moment) {
   'use strict';
 
   // @include ./time-segments.js
