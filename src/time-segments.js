@@ -1,7 +1,7 @@
 var TimeSegments = {
 
   // Segment an array of events by scale
-  segment: function(events, scale, options) {
+  segment(events, scale, options) {
     scale = scale || 'weeks';
     options = options || {};
     _.defaults(options, {
@@ -32,3 +32,5 @@ var TimeSegments = {
     return segments;
   }
 };
+
+export default TimeSegments;

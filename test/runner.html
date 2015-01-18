@@ -2,45 +2,34 @@
 <html lang='en'>
 <head>
   <meta charset='utf-8'>
-  <title>Time Segments Tests</title>
-
+  <title>Tests</title>
   <link rel='stylesheet' href='../node_modules/mocha/mocha.css' />
 
-  <!-- Load testing tools -->
+  <!-- Testing libraries -->
   <script src='../node_modules/mocha/mocha.js'></script>
   <script src='../node_modules/chai/chai.js'></script>
   <script src='../node_modules/sinon/pkg/sinon.js'></script>
   <script src='../node_modules/sinon-chai/lib/sinon-chai.js'></script>
 
-  <!-- Load any dependencies -->
-  <script src='../node_modules/moment/moment.js'></script>
-  <script src='../node_modules/underscore/underscore.js'></script>
+  <!-- Livereload -->
+  <script src='http://localhost:35729/livereload.js'></script>
 
-  <!-- Load the library -->
-  <script src='../src/time-segments.js'></script>
+  <!-- Load the built library -->
+  <script src='../tmp/__spec-build.js'></script>
 
-  <!-- Setup tests -->
-  <script src='setup/helpers.js'></script>
-
-  <!-- Load fixtures -->
-  <script src='fixtures/one-event.js'></script>
-  <script src='fixtures/two-events.js'></script>
-
-  <!-- Load the helper tests -->
+  <!-- Add your tests here -->
   <script src='unit/helpers/humanize.js'></script>
-
-  <!-- Load the test specs -->
   <script src='unit/one-event/one-day.js'></script>
   <script src='unit/one-event/three-days.js'></script>
-  <script src='unit/one-event/two-weeks.js'></script>
   <script src='unit/one-event/two-months.js'></script>
+  <script src='unit/one-event/two-weeks.js'></script>
   <script src='unit/one-event/two-years.js'></script>
   <script src='unit/two-events/concurrent.js'></script>
   <script src='unit/two-events/nonconcurrent.js'></script>
+  <script src='unit/two-events/overlapping.js'></script>
 </head>
 <body>
   <!-- Required for browser reporter -->
   <div id='mocha'></div>
-  <div id='fixtures'></div>
 </body>
 </html>
