@@ -3,5 +3,9 @@
   "exportFileName": "time-segments",
   "entryFileName": "time-segments",
   "exportVarName": "TimeSegments",
-  "mochaGlobals": ["stub", "spy", "expect", "TimeSegments", "humanize"]
+  "mochaGlobals": [
+    "stub", "spy", "expect",
+    "TimeSegments", "humanize",
+    "_", "moment", "fixtures"
+  ]
 }
