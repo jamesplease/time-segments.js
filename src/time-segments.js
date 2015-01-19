@@ -1,3 +1,6 @@
+import _ from 'underscore';
+import moment from 'moment';
+
 var TimeSegments = {
 
   // Segment an array of events by scale
