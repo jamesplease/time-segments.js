@@ -20,6 +20,7 @@ module.exports = function() {
   global.fixtures = {};
   global.fixtures.oneEvent = require('../fixtures/one-event');
   global.fixtures.twoEvents = require('../fixtures/two-events');
+  global.fixtures.options = require('../fixtures/nonstandard-format');
 
   beforeEach(function() {
     this.sandbox = global.sinon.sandbox.create();
