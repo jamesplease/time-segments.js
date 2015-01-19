@@ -11,7 +11,24 @@ var TimeSegments = {
       startAttribute: 'start',
       endAttribute: 'end'
     });
-    events = _.chain(events).clone().sortBy(options.startAttribute).value();
+    var start, end, startIsMoment, endIsMoment;
+    events = _.chain(events)
+      .clone()
+      .map(e => {
+        start = e[options.startAttribute];
+        end = e[options.endAttribute];
+        startIsMoment = moment.isMoment(start);
+        endIsMoment = moment.isMoment(end);
+        if ((!startIsMoment || !endIsMoment) && !options.timeFormat) {
+          throw new Error('Parsing strings into dates requires the `timeFormat` option.');
+        }
+        start = moment.isMoment(start) ? start : moment(start, options.timeFormat);
+        end = moment.isMoment(end) ? end : moment(end, options.timeFormat);
+        return _.extend(e, {start, end});
+      })
+      .sortBy(e => { return e.start.unix(); })
+      .value();
+
     var segments = {};
 
     // Clone our events so that we're not modifying the original

@@ -1,11 +1,12 @@
 describe('One event; one day', function() {
   beforeEach(function() {
     this.events = fixtures.oneEvent.oneDay;
+    this.options = {timeFormat: 'YYYY-MM-DD'};
   });
 
   describe('and the scale is years', function() {
     beforeEach(function() {
-      this.segments = humanize(TimeSegments.segment(this.events, 'years'));
+      this.segments = humanize(TimeSegments.segment(this.events, 'years', this.options));
     });
 
     it('should have a single key', function() {
@@ -23,7 +24,7 @@ describe('One event; one day', function() {
 
   describe('and the scale is months', function() {
     beforeEach(function() {
-      this.segments = humanize(TimeSegments.segment(this.events, 'months'));
+      this.segments = humanize(TimeSegments.segment(this.events, 'months', this.options));
     });
 
     it('should have a single key', function() {
@@ -41,7 +42,7 @@ describe('One event; one day', function() {
 
   describe('and the scale is weeks', function() {
     beforeEach(function() {
-      this.segments = humanize(TimeSegments.segment(this.events, 'weeks'));
+      this.segments = humanize(TimeSegments.segment(this.events, 'weeks', this.options));
     });
 
     it('should have a single key', function() {
@@ -59,7 +60,7 @@ describe('One event; one day', function() {
 
   describe('and the scale is days', function() {
     beforeEach(function() {
-      this.segments = humanize(TimeSegments.segment(this.events, 'days'));
+      this.segments = humanize(TimeSegments.segment(this.events, 'days', this.options));
     });
 
     it('should have a single key', function() {

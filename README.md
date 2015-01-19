@@ -16,8 +16,13 @@ grouped together.
 
 An Event is an object with at least properties:
 
-`start` - A start time as a unix timestamp  
-`end` - An end time as a unix timestamp
+`start` - A start time  
+`end` - An end time
+
+These two attributes can either be a `moment`, or a string that can be formatted
+into a moment. If it is the latter, you will need to pass the `timeFormat` option
+so that moment can parse the string correctly. For more, refer to
+[the moment docs](http://momentjs.com/docs/#/parsing/string-format/).
 
 It is almost always the case that events will have a unique ID, and
 possibly other data, associated with them. This library is agnostic
@@ -49,5 +54,6 @@ default scale is `weeks`. Optionally pass `options` to configure the algorithm.
 The available options are:
 
 `startAttribute` - the name of each Event's start attribute  
-`endAttribute` - the name of each Event's end attribute
-
+`endAttribute` - the name of each Event's end attribute  
+`timeFormat` - required if your start and end attributes are strings. Refer
+  to [the moment docs](http://momentjs.com/docs/#/parsing/string-format/) for more.
