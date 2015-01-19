@@ -1,11 +1,12 @@
 describe('Two events; overlapping', function() {
   beforeEach(function() {
     this.events = fixtures.twoEvents.overlapping;
+    this.options = {timeFormat: 'YYYY-MM-DD'};
   });
 
   describe('and the scale is years', function() {
     beforeEach(function() {
-      this.segments = humanize(TimeSegments.segment(this.events, 'years'));
+      this.segments = humanize(TimeSegments.segment(this.events, 'years', this.options));
     });
 
     it('should have one segment', function() {
@@ -24,7 +25,7 @@ describe('Two events; overlapping', function() {
 
   describe('and the scale is months', function() {
     beforeEach(function() {
-      this.segments = humanize(TimeSegments.segment(this.events, 'months'));
+      this.segments = humanize(TimeSegments.segment(this.events, 'months', this.options));
     });
 
     it('should have one segment', function() {
@@ -43,7 +44,7 @@ describe('Two events; overlapping', function() {
 
   describe('and the scale is weeks', function() {
     beforeEach(function() {
-      this.segments = humanize(TimeSegments.segment(this.events, 'weeks'));
+      this.segments = humanize(TimeSegments.segment(this.events, 'weeks', this.options));
     });
 
     it('should have one segment', function() {
@@ -62,7 +63,7 @@ describe('Two events; overlapping', function() {
 
   describe('and the scale is days', function() {
     beforeEach(function() {
-      this.segments = humanize(TimeSegments.segment(this.events, 'days'));
+      this.segments = humanize(TimeSegments.segment(this.events, 'days', this.options));
     });
 
     it('should have three segments', function() {

@@ -1,7 +1,11 @@
 describe('A single event with different start and end keys', function() {
   beforeEach(function() {
-    this.events = fixtures.options.oneDay;
-    var options = {startAttribute: 'first_day', endAttribute: 'last_day'};
+    this.events = fixtures.options.differentAttrs;
+    var options = {
+      startAttribute: 'first_day',
+      endAttribute: 'last_day',
+      timeFormat: 'YYYY-MM-DD'
+    };
     this.segments = humanize(TimeSegments.segment(this.events, 'years', options));
   });
 

@@ -1,11 +1,12 @@
 describe('Two events; concurrent', function() {
   beforeEach(function() {
     this.events = fixtures.twoEvents.concurrent;
+    this.options = {timeFormat: 'YYYY-MM-DD'};
   });
 
   describe('and the scale is years', function() {
     beforeEach(function() {
-      this.segments = humanize(TimeSegments.segment(this.events, 'years'));
+      this.segments = humanize(TimeSegments.segment(this.events, 'years', this.options));
     });
 
     it('should have a single segment', function() {
@@ -27,7 +28,7 @@ describe('Two events; concurrent', function() {
 
   describe('and the scale is months', function() {
     beforeEach(function() {
-      this.segments = humanize(TimeSegments.segment(this.events, 'months'));
+      this.segments = humanize(TimeSegments.segment(this.events, 'months', this.options));
     });
 
     it('should have a single segment', function() {
@@ -49,7 +50,7 @@ describe('Two events; concurrent', function() {
 
   describe('and the scale is weeks', function() {
     beforeEach(function() {
-      this.segments = humanize(TimeSegments.segment(this.events, 'weeks'));
+      this.segments = humanize(TimeSegments.segment(this.events, 'weeks', this.options));
     });
 
     it('should have two segments', function() {
@@ -76,7 +77,7 @@ describe('Two events; concurrent', function() {
 
   describe('and the scale is days', function() {
     beforeEach(function() {
-      this.segments = humanize(TimeSegments.segment(this.events, 'days'));
+      this.segments = humanize(TimeSegments.segment(this.events, 'days', this.options));
     });
 
     it('should have 8 segments', function() {
