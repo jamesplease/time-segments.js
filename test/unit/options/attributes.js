@@ -10,14 +10,14 @@ describe('A single event with different start and end keys', function() {
   });
 
   it('should have a single key', function() {
-    expect(this.segments).to.have.keys(['2015-01-01']);
+    expect(this.segments).to.have.keys(['2014-01-01']);
   });
 
   it('should have a single event in that key', function() {
-    expect(this.segments['2015-01-01']).to.have.length(1);
+    expect(this.segments['2014-01-01']).to.have.length(1);
   });
 
   it('should have the event passed in within that key', function() {
-    expect(this.segments['2015-01-01'][0]).to.deep.equal(this.events[0]);
+    expect(this.segments['2014-01-01'][0]).to.deep.equal(this.events[0]);
   });
 });

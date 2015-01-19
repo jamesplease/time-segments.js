@@ -7,8 +7,8 @@ if (module) { module.exports = fixtures.options; }
 fixtures.options.differentAttrs = [
   {
     id: 1,
-    first_day: '2015-03-28',
-    last_day: '2015-03-28'
+    first_day: '2014-03-28',
+    last_day: '2014-03-28'
   }
 ];
 
