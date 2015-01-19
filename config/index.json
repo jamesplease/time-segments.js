@@ -2,5 +2,6 @@
   "destinationFolder": "dist",
   "exportFileName": "time-segments",
   "entryFileName": "time-segments",
-  "exportVarName": "TimeSegments"
+  "exportVarName": "TimeSegments",
+  "mochaGlobals": ["stub", "spy", "expect", "TimeSegments", "humanize"]
 }
