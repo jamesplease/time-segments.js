@@ -43,8 +43,8 @@ and returns an array of Segments.
 
 ##### `segment( events, scale [, options] )`
 
-Takes in an array of `events` and a `scale`, returns a `segments` Object.
-Optionally pass `options` to configure the algorithm.
+Takes in an array of `events` and a `scale`, returns a `segments` Object. The
+default scale is `weeks`. Optionally pass `options` to configure the algorithm.
 
 The available options are:
 
