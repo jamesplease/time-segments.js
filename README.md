@@ -1,4 +1,7 @@
-# time-segments.js [![Travis build status](http://img.shields.io/travis/jmeas/time-segments.js.svg?style=flat)](https://travis-ci.org/jmeas/time-segments.js)
+# time-segments.js
+[![Travis build status](http://img.shields.io/travis/jmeas/time-segments.js.svg?style=flat)](https://travis-ci.org/jmeas/time-segments.js)
+[![Dependency Status](https://david-dm.org/jmeas/time-segments.js.svg)](https://david-dm.org/jmeas/time-segments.js) 
+[![devDependency Status](https://david-dm.org/jmeas/time-segments.js/dev-status.svg)](https://david-dm.org/jmeas/time-segments.js#info=devDependencies)
 
 Group event data into segments of time.
 
