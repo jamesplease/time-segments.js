@@ -1,13 +1,5 @@
-(function (root, factory) {
-  if (typeof define === "function" && define.amd) {
-    define(["underscore", "moment"], factory);
-  } else if (typeof exports !== "undefined") {
-    var _ = require("underscore");
-    var moment = require("moment");
-    module.exports = factory(_, moment);
-  } else {
-    root.TimeSegments = factory(root._, root.moment);
-  }
+(function (global, factory) {
+  typeof exports === "object" && typeof module !== "undefined" ? module.exports = factory(require("underscore"), require("moment")) : typeof define === "function" && define.amd ? define(["underscore", "moment"], factory) : global.TimeSegments = factory(global._, global.moment);
 })(this, function (_, moment) {
   "use strict";
 
@@ -22,7 +14,11 @@
         endAttribute: "end"
       });
 
-      var segments = {}, start, end, startIsMoment, endIsMoment;
+      var segments = {},
+          start,
+          end,
+          startIsMoment,
+          endIsMoment;
       events = _.chain(events).clone().map(function (e) {
         start = e[options.startAttribute];
         end = e[options.endAttribute];
@@ -59,9 +55,8 @@
     }
   };
 
+  var time_segments = TimeSegments;
 
-
-
-  return TimeSegments;
+  return time_segments;
 });
-//# sourceMappingURL=time-segments.js.map
+//# sourceMappingURL=./time-segments.js.map
